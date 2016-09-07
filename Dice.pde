@@ -27,25 +27,26 @@ class Die //models one single dice cube
 	}
 	void roll()
 	{
-		if ((Math.random()*6) < 1)
+		if ((Math.random()*6)) <= 1)
 		{
 			dNum = 1;
 		}
-		else if ((Math.random()*6) < 2)
+		else if ((Math.random()*6)) <= 2)
 		{
 			dNum = 2;
 		}
-		else if ((Math.random()*6) < 3)
+		else if ((Math.random()*6)) <= 3)
 		{
 			dNum = 3;
 		}
-		else if ((Math.random()*6) < 4)
+		else if ((Math.random()*6)) <= 4)
 		{
 			dNum = 4;
 		}
-		else if ((Math.random()*6) < 5)
+		else if ((Math.random()*6)) <= 5)
 		{
 			dNum = 5;
+		}
 		else 
 		{
 			dNum = 6;
