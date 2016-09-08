@@ -1,4 +1,5 @@
 Die bob; 
+double numGen = (Math.random()*6);
 void setup()
 {
 	size(300,300);
@@ -7,7 +8,8 @@ void setup()
 }
 void draw()
 {
-	bob = new Die(150,150);
+	numGen = (Math.random()*6);
+	bob = new Die(myX,myY);
 	bob.roll();
 	bob.show();
 
@@ -24,26 +26,29 @@ class Die //models one single dice cube
 	{
 		myX = x;
 		myY = y;
+		x = 10;
+		while (x < 300)
+			x = x + 50;
 	}
 	void roll()
 	{
-		if ((Math.random()*6)) <= 1)
+		if (numGen <= 1)
 		{
 			dNum = 1;
 		}
-		else if ((Math.random()*6)) <= 2)
+		else if (numGen <= 2)
 		{
 			dNum = 2;
 		}
-		else if ((Math.random()*6)) <= 3)
+		else if (numGen <= 3)
 		{
 			dNum = 3;
 		}
-		else if ((Math.random()*6)) <= 4)
+		else if (numGen <= 4)
 		{
 			dNum = 4;
 		}
-		else if ((Math.random()*6)) <= 5)
+		else if (numGen <= 5)
 		{
 			dNum = 5;
 		}
@@ -55,6 +60,6 @@ class Die //models one single dice cube
 	void show()
 	{
 		//your code here
-		System.out.println(dNum);  
+		rect(myX, myY, 40, 40);
 	}
 }
