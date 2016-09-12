@@ -26,9 +26,13 @@ class Die //models one single dice cube
 	{
 		myX = x;
 		myY = y;
-		x = 10;
-		while (x < 300)
-			x = x + 50;
+		for (int y=10;y<=100;y+=30)
+    	{
+      		for(int x=10;x<=100;x+=30)
+      		{
+        		rect(x,y,20,20);
+      		}
+    	}
 	}
 	void roll()
 	{
@@ -60,6 +64,14 @@ class Die //models one single dice cube
 	void show()
 	{
 		//your code here
-		rect(myX, myY, 40, 40);
+		
+		for (int y=10;y<=100;y+=30)
+    	{
+      		for(int x=10;x<=100;x+=30)
+      		{
+        		rect(x,y,20,20);
+      		}
+    	}
 	}
 }
+
