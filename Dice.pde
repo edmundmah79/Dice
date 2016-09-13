@@ -9,9 +9,15 @@ void setup()
 void draw()
 {
 	numGen = (Math.random()*6);
-	bob = new Die(myX,myY);
-	bob.roll();
-	bob.show();
+	for (int y=10;y<=100;y+=30)
+    {
+      	for(int x=10;x<=100;x+=30)
+      	{
+      		bob.roll();
+      		bob = new Die(x,y);
+      		bob.show();
+      	}
+    }
 
 }
 void mousePressed()
@@ -26,13 +32,6 @@ class Die //models one single dice cube
 	{
 		myX = x;
 		myY = y;
-		for (int y=10;y<=100;y+=30)
-    	{
-      		for(int x=10;x<=100;x+=30)
-      		{
-        		rect(x,y,20,20);
-      		}
-    	}
 	}
 	void roll()
 	{
@@ -64,14 +63,8 @@ class Die //models one single dice cube
 	void show()
 	{
 		//your code here
+		rect(myX,myY,20,20);
 		
-		for (int y=10;y<=100;y+=30)
-    	{
-      		for(int x=10;x<=100;x+=30)
-      		{
-        		rect(x,y,20,20);
-      		}
-    	}
 	}
 }
 
