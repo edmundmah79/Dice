@@ -1,20 +1,26 @@
 Die bob; 
 double numGen = (Math.random()*6);
+int diceColor1 = (int)(Math.random()*256);
+int diceColor2 = (int)(Math.random()*256);
+int diceColor3 = (int)(Math.random()*256);
 void setup()
 {
-	size(300,300);
+	size(1000,1000);
 	noLoop();
 	textAlign(CENTER);
 }
 void draw()
 {
-	numGen = (Math.random()*6);
-	for (int y=10;y<=100;y+=30)
+	for (int y=10;y<990;y+=70)
     {
-      	for(int x=10;x<=100;x+=30)
+      	for(int x=10;x<990;x+=70)
       	{
-      		bob.roll();
+      		numGen = (Math.random()*6);
+      		diceColor1 = (int)(Math.random()*256);
+			diceColor2 = (int)(Math.random()*256);
+			diceColor3 = (int)(Math.random()*256);
       		bob = new Die(x,y);
+      		bob.roll();
       		bob.show();
       	}
     }
@@ -63,8 +69,57 @@ class Die //models one single dice cube
 	void show()
 	{
 		//your code here
-		rect(myX,myY,20,20);
-		
+		strokeWeight(2);
+		rect(myX,myY,60,60);
+		strokeWeight(10);
+		fill(diceColor1,diceColor2,diceColor3);
+		if (diceColor1 < 50 && diceColor2 < 50 && diceColor3 < 50)
+      	{
+      		stroke(255,255,255);
+      	}
+		else 
+		{
+			stroke(0,0,0);
+		}
+		if (dNum == 1)
+		{
+			point(myX+30,myY+30);
+		}
+		else if (dNum == 2)
+		{
+			point(myX+15,myY+15);
+			point(myX+45,myY+45);
+		}
+		else if (dNum == 3)
+		{
+			point(myX+15,myY+15);
+			point(myX+30,myY+30);
+			point(myX+45,myY+45);
+		}
+		else if (dNum == 4)
+		{
+			point(myX+15,myY+15);
+			point(myX+45,myY+15);
+			point(myX+15,myY+45);
+			point(myX+45,myY+45);
+		}
+		else if (dNum == 5)
+		{
+			point(myX+15,myY+15);
+			point(myX+45,myY+15);
+			point(myX+15,myY+45);
+			point(myX+45,myY+45);
+			point(myX+30,myY+30);
+		}
+		else
+		{
+			point(myX+15,myY+15);
+			point(myX+45,myY+15);
+			point(myX+15,myY+45);
+			point(myX+45,myY+45);
+			point(myX+15,myY+30);
+			point(myX+45,myY+30);
+		}
 	}
 }
 
