@@ -3,6 +3,7 @@ double numGen = (Math.random()*6);
 int diceColor1 = (int)(Math.random()*256);
 int diceColor2 = (int)(Math.random()*256);
 int diceColor3 = (int)(Math.random()*256);
+int myNum = 0;
 void setup()
 {
 	size(1000,1000);
@@ -11,9 +12,10 @@ void setup()
 }
 void draw()
 {
-	for (int y=10;y<990;y+=70)
+	fill(0,0,0);
+	for (int y=65;y<975;y+=70)
     {
-      	for(int x=10;x<990;x+=70)
+      	for(int x=45;x<955;x+=70)
       	{
       		numGen = (Math.random()*6);
       		diceColor1 = (int)(Math.random()*256);
@@ -21,13 +23,16 @@ void draw()
 			diceColor3 = (int)(Math.random()*256);
       		bob = new Die(x,y);
       		bob.roll();
+      		myNum = myNum + bob.dNum;
       		bob.show();
       	}
+    text("Number Rolled:" +  myNum, 500, 20);
     }
-
 }
 void mousePressed()
 {
+	background(125);
+	myNum = 0;
 	redraw();
 }
 class Die //models one single dice cube
@@ -65,6 +70,7 @@ class Die //models one single dice cube
 		{
 			dNum = 6;
 		}
+		
 	}
 	void show()
 	{
@@ -73,14 +79,7 @@ class Die //models one single dice cube
 		rect(myX,myY,60,60);
 		strokeWeight(10);
 		fill(diceColor1,diceColor2,diceColor3);
-		if (diceColor1 < 50 && diceColor2 < 50 && diceColor3 < 50)
-      	{
-      		stroke(255,255,255);
-      	}
-		else 
-		{
-			stroke(0,0,0);
-		}
+		stroke(0);
 		if (dNum == 1)
 		{
 			point(myX+30,myY+30);
@@ -120,6 +119,7 @@ class Die //models one single dice cube
 			point(myX+15,myY+30);
 			point(myX+45,myY+30);
 		}
+		
 	}
 }
 
