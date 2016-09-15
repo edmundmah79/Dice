@@ -12,15 +12,14 @@ void setup()
 }
 void draw()
 {
-	fill(0,0,0);
 	for (int y=65;y<975;y+=70)
     {
       	for(int x=45;x<955;x+=70)
       	{
       		numGen = (Math.random()*6);
-      		diceColor1 = (int)(Math.random()*256);
-			diceColor2 = (int)(Math.random()*256);
-			diceColor3 = (int)(Math.random()*256);
+      		diceColor1 = (int)(Math.random()*256)+50;
+			diceColor2 = (int)(Math.random()*256)+50;
+			diceColor3 = (int)(Math.random()*256)+50;
       		bob = new Die(x,y);
       		bob.roll();
       		myNum = myNum + bob.dNum;
