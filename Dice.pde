@@ -12,6 +12,7 @@ void setup()
 }
 void draw()
 {
+	background(125);
 	for (int y=65;y<975;y+=70)
     {
       	for(int x=45;x<955;x+=70)
@@ -30,7 +31,7 @@ void draw()
 }
 void mousePressed()
 {
-	background(125);
+	
 	myNum = 0;
 	redraw();
 }
