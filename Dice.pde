@@ -26,8 +26,8 @@ void draw()
       		myNum = myNum + bob.dNum;
       		bob.show();
       	}
-    text("Number Rolled:" +  myNum, 500, 20);
     }
+	text("Number Rolled:" +  myNum, 500, 20);
 }
 void mousePressed()
 {
