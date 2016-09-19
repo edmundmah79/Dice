@@ -12,7 +12,7 @@ void setup()
 }
 void draw()
 {
-	background(125);
+	background(170);
 	for (int y=65;y<975;y+=70)
     {
       	for(int x=45;x<955;x+=70)
